@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Rendez-vous{% endblock %}
+{% block content %}
+  <h2>Agenda</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Date</th><th>Client</th><th>Sujet</th><th>Statut</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for rdv in rdvs %}
+        <tr>
+          <td>{{ rdv.date }}</td>
+          <td>{{ rdv.client.nom_complet }}</td>
+          <td>{{ rdv.sujet }}</td>
+          <td>{{ rdv.statut }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Liste des clients{% endblock %}
+{% block content %}
+  <h2>Clients</h2>
+  <ul class="list-group">
+    {% for client in clients %}
+      <li class="list-group-item">
+        {{ client.nom_complet }} - {{ client.email }}
+      </li>
+    {% empty %}
+      <li class="list-group-item">Aucun client trouvé.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

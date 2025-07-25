@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Documents juridiques{% endblock %}
+{% block content %}
+  <h2>Fichiers</h2>
+  <ul>
+    {% for doc in documents %}
+      <li>
+        <a href="{{ doc.fichier.url }}">{{ doc.titre }}</a> - Ajouté le {{ doc.date_upload }}
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

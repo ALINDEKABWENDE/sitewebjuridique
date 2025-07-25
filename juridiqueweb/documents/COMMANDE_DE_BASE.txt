@@ -1,0 +1,85 @@
+--------------------------------------------------------------------------------------
+======================== QUELQUES COMMANDES NECESSAIRES =============================
+---------------------------------------------------------------------------------------
+
+
+		les 3 pincipaux modes d'un equipement cisco ( SWITCH et ROUTEUR)
+
+	1. Mode Utilisateur: ouverture de l'equipement
+	2. Mode Privilegier: Permet d'afficher et d'enregistrer les configuration
+	3. Mode de configuration Globale: permet de configurer l'equipement.
+
+	Plusieurs modes specifiques
+
+		1. Mode Utilisateur
+	ex: Router>
+	ex: Switch>enable
+
+- enable: permet d'entre dans le mode privilegier
+
+	ex: Router#
+	ex: Switch#
+		
+		2. Mode privileger
+	a. Afficher
+
+	ex: Router# show running-config : afficher la configuration courante (RAM)
+	ex: Router# show startup-config : afficher la configuration qui se trouve dans le NVRAM
+	ex: Switch# show vlan brief : afficher les vlans qui se trouve dans le switch
+
+	b. Enregistrer les configurations
+
+	ex: Router# copy running-config startup-config 
+	ex: Router# Write memory
+	
+	Pour entrer dans le mode de configuration globale il faut taper la commande: configure termeinal
+	ex: Router# configure terminal
+	ex: Router(config)#
+
+	ex: Swith# configure terminal
+	ex: Switch(config)#
+
+		3. Mode de COnfiguration Globale
+
+	ex: Router(config)#
+	ex: Switch(config)#
+
+- la commande EXIT permet de retourner en arriere
+- la commande END permet retourner dans le mode privilegier
+=============================================================================================================
+---------------------------------------- CONFIGURATION DE SWITCH---------------------------------------------
+=============================================================================================================
+		
+	Switch>enable
+	Switch#configure terminal
+	Switch(config)#
+--------------------------------------------------------------
+-------------------------Creation de vlan--------------------
+--------------------------------------------------------------
+	Switch(config)# vlan 2
+	Switch(config-vlan)# name DIRECTION
+	Swith(config-vlan)#exit
+	Swith(config)#
+---------------------------------------------------------------
+------------ Affectaion de port dans le vlan------------------
+----------------------------------------------------------------
+
+	-----Affectation d'un seul port dans un Vlan------
+
+	Switch(config)#interface fastEthernet 0/1
+	Switch(config-if)#switchport mode access
+	Switch(config-if)# switchport access vlan 2
+
+	------ Affectation de plusieurs ports dans un VLAn( il faut que ces port se suivent ) ------
+	
+	Switch(config)# interface range fastEthernet 0/1-10
+	Switch(config-if)#switchport mode access
+	Switch(config-if)# switchport access vlan 2
+
+
+	
+- le 2 c'est l'ID Vlan a creer
+- name permet de renommer le Vlan
+
+			
+

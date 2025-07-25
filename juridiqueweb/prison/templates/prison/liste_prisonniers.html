@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Prisonniers{% endblock %}
+{% block content %}
+  <h2>Liste des détenus</h2>
+  <table class="table table-striped">
+    <thead><tr><th>Nom</th><th>Numéro</th><th>Incarcération</th></tr></thead>
+    <tbody>
+      {% for prisonnier in prisonniers %}
+        <tr>
+          <td>{{ prisonnier.nom }}</td>
+          <td>{{ prisonnier.numero_dossier }}</td>
+          <td>{{ prisonnier.date_incarceration }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

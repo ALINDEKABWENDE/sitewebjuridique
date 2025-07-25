@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Ajouter un prisonnier{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h2>📥 Enregistrement d’un nouveau prisonnier</h2>
+
+    <form method="post" class="mt-4">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-success">✅ Enregistrer</button>
+    </form>
+
+    <a href="{% url 'liste_prisonniers' %}" class="btn btn-secondary mt-3">← Retour à la liste</a>
+  </div>
+{% endblock %}

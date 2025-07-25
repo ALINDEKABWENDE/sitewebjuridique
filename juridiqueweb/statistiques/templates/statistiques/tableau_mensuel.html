@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Statistiques mensuelles{% endblock %}
+{% block content %}
+  <h2>Données de {{ mois }}/{{ année }}</h2>
+  <ul>
+    <li>Dossiers ouverts : {{ stats.nombre_dossiers_ouverts }}</li>
+    <li>Prisonniers admis : {{ stats.nombre_prisonniers_admis }}</li>
+    <li>Rendez-vous enregistrés : {{ stats.nombre_rendez_vous }}</li>
+  </ul>
+{% endblock %}
